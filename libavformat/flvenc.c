@@ -989,7 +989,7 @@ static int flv_write_packet(AVFormatContext *s, AVPacket *pkt)
             else
                 avio_w8(pb, ((FFALIGN(par->width,  16) - par->width) << 4) |
                              (FFALIGN(par->height, 16) - par->height));
-        } else if (par->codec_id == AV_CODEC_ID_AAC)
+        } else if (par->codec_id == AV_CODEC_ID_AAC){
             avio_w8(pb, 1); // AAC raw
        } else if (par->codec_id == AV_CODEC_ID_H264 || par->codec_id == AV_CODEC_ID_MPEG4 || par->codec_id == AV_CODEC_ID_HEVC) {
             avio_w8(pb, 1); // AVC NALU
